@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="driver" class="java.lang.String">
+        <constructor-arg type="java.lang.String" value="PostgresDriver"/>
+    </bean>
+
+    <bean id="userRepository" class="dance.brain.scbtspring.repository.UserRepository" factory-method="of">
+        <constructor-arg ref="pool1"/>
+    </bean>
+
+    <bean id="pool1" name="p1" class="dance.brain.scbtspring.database.ConnectionPool">
+        <constructor-arg value="postgres" name="username"></constructor-arg>
+        <constructor-arg value="10" name="poolSize"></constructor-arg>
+        <constructor-arg name="args">
+            <list>
+                <value>value1</value>
+                <value>value2</value>
+                <ref bean="driver"/>
+            </list>
+        </constructor-arg>
+        <constructor-arg name="properties">
+            <map>
+                <entry key="url" value="postgres-url">
+                </entry>
+                <entry key="password" value="pass"></entry>
+                <entry key="driver" value-ref="driver"/>
+            </map>
+        </constructor-arg>
+    </bean>
+
+</beans>
