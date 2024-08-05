@@ -1,30 +1,51 @@
 package dance.brain.scbtspring.database;
 
-import java.util.List;
-import java.util.Map;
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
+@Component("pool1")
 public class ConnectionPool {
 
     private final String username;
     private final Integer poolSize;
-    private final List<Object> args;
+//    private final List<Object> args;
+//
+//    private final Map<String, Object> properties;
 
-    private final Map<String, Object> properties;
-
-    public ConnectionPool(String username, Integer poolSize, List<Object> args, Map<String, Object> properties) {
+    @Autowired
+    public ConnectionPool(@Value("${db.username}") String username,
+                          @Value("${db.pool.size}") Integer poolSize) {
         this.username = username;
         this.poolSize = poolSize;
-        this.args = args;
-        this.properties = properties;
+    }
+
+//    public ConnectionPool(String username, Integer poolSize, List<Object> args, Map<String, Object> properties) {
+//        this.username = username;
+//        this.poolSize = poolSize;
+//        this.args = args;
+//        this.properties = properties;
+//    }
+
+    @PostConstruct
+    public void init() {
+        System.out.println("init connection pool");
+    }
+
+    @PreDestroy
+    public void destroy() {
+        System.out.println("clean connection pool");
     }
 
     @Override
     public String toString() {
         return "ConnectionPool{" +
-               "username='" + username + '\'' +
-               ", poolSize=" + poolSize +
-               ", args=" + args +
-               ", properties=" + properties +
-               '}';
+                "username='" + username + '\'' +
+                ", poolSize=" + poolSize +
+//                ", args=" + args +
+//                ", properties=" + properties +
+                '}';
     }
 }
