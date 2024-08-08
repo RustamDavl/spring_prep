@@ -2,11 +2,13 @@ package dance.brain.scbtspring.database;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component("pool1")
+@Slf4j
 public class ConnectionPool {
 
     private final String username;
@@ -31,12 +33,12 @@ public class ConnectionPool {
 
     @PostConstruct
     public void init() {
-        System.out.println("init connection pool");
+        log.info("init connection pool with pool size : " + poolSize);
     }
 
     @PreDestroy
     public void destroy() {
-        System.out.println("clean connection pool");
+        log.info("clean connection pool");
     }
 
     @Override

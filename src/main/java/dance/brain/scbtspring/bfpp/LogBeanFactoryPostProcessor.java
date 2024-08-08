@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 public class LogBeanFactoryPostProcessor implements BeanFactoryPostProcessor, Ordered {
     @Override
     public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
-        System.out.println();
+//        System.out.println();
     }
 
     @Override

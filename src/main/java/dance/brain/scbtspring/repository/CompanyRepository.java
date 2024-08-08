@@ -5,6 +5,7 @@ import dance.brain.scbtspring.annotation.Transaction;
 import dance.brain.scbtspring.database.ConnectionPool;
 import dance.brain.scbtspring.entity.Company;
 import jakarta.annotation.PostConstruct;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.config.BeanDefinition;
@@ -17,25 +18,25 @@ import java.util.Optional;
 @Auditing
 @Component
 @Scope(BeanDefinition.SCOPE_PROTOTYPE)
+@Slf4j
 public class CompanyRepository implements CrudRepository<Integer, Company> {
 
     private final ConnectionPool connectionPool;
 
     @Autowired
-    public CompanyRepository(@Qualifier("pool1") ConnectionPool connectionPool) {
+    public CompanyRepository(@Qualifier("pool2") ConnectionPool connectionPool) {
         this.connectionPool = connectionPool;
     }
 
 
     @Override
     public Optional<Company> findById(Integer id) {
-        System.out.println("findById method.");
         return Optional.of(new Company(id));
     }
 
     @Override
     public void delete(Company entity) {
-        System.out.println("delete method.");
+        log.info("delete method.");
     }
 
     @Override
@@ -45,6 +46,6 @@ public class CompanyRepository implements CrudRepository<Integer, Company> {
 
     @PostConstruct
     public void init() {
-        System.out.println("init company repository");
+        log.info("init company repository");
     }
 }
