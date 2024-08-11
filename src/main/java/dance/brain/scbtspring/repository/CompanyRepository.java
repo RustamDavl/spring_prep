@@ -19,7 +19,7 @@ import java.util.Optional;
 @Component
 @Scope(BeanDefinition.SCOPE_PROTOTYPE)
 @Slf4j
-public class CompanyRepository implements CrudRepository<Integer, Company> {
+public class CompanyRepository implements CrudRepository<Long, Company> {
 
     private final ConnectionPool connectionPool;
 
@@ -30,8 +30,9 @@ public class CompanyRepository implements CrudRepository<Integer, Company> {
 
 
     @Override
-    public Optional<Company> findById(Integer id) {
-        return Optional.of(new Company(id));
+    public Optional<Company> findById(Long id) {
+//        return
+        return Optional.empty();
     }
 
     @Override

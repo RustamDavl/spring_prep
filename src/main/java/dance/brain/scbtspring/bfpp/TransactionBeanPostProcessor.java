@@ -13,6 +13,7 @@ import java.lang.reflect.Proxy;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+
 @Component
 public class TransactionBeanPostProcessor implements BeanPostProcessor {
 
@@ -35,7 +36,10 @@ public class TransactionBeanPostProcessor implements BeanPostProcessor {
                         System.out.println("open transaction");
                         try {
                             return method.invoke(bean, args); // в любом случае подставляем bean даже если это прокси.
-                            // прокси объеты можно вклыдвать друг в друга.
+                            // прокси объеты можно вкладывать друг в друга.
+                        } catch (Exception e) {
+                            System.out.println("Rollback transaction");
+                            throw e;
                         } finally {
                             System.out.println("close transaction");
                         }

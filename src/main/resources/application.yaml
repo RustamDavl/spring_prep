@@ -22,3 +22,22 @@ db:
     third.value: Thir
 repo:
   name: test
+logging:
+  level:
+    root: INFO
+  file:
+    name: test.log
+    path: /
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/scbt
+    username: scbt
+    password: scbt
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        hbm2ddl:
+          auto: validate

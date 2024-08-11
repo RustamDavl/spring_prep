@@ -1,0 +1,94 @@
+2024-08-11T10:37:20.187+03:00  INFO 18992 --- [main] d.b.s.i.service.CompanyServiceIT         : Starting CompanyServiceIT using Java 19.0.2 with PID 18992 (started by Rustam in C:\Users\Rustam\IdeaProjects\spring_prep)
+2024-08-11T10:37:20.215+03:00  INFO 18992 --- [main] d.b.s.i.service.CompanyServiceIT         : The following 1 profile is active: "test"
+2024-08-11T10:37:21.457+03:00  INFO 18992 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-11T10:37:21.530+03:00  INFO 18992 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47 ms. Found 0 JPA repository interfaces.
+2024-08-11T10:37:24.742+03:00  INFO 18992 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-11T10:37:25.382+03:00  INFO 18992 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@164d01ba
+2024-08-11T10:37:25.386+03:00  INFO 18992 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-11T10:37:25.768+03:00  INFO 18992 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-11T10:37:26.014+03:00  INFO 18992 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-08-11T10:37:26.162+03:00  INFO 18992 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-11T10:37:26.604+03:00  INFO 18992 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-11T10:37:29.334+03:00  INFO 18992 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-11T10:37:29.473+03:00  INFO 18992 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-11T10:37:29.491+03:00  INFO 18992 --- [main] d.b.scbtspring.config.JpaConfiguration   : Jpa configuration was enabled.
+2024-08-11T10:37:29.513+03:00  INFO 18992 --- [main] d.b.scbtspring.database.ConnectionPool   : init connection pool with pool size : 12
+2024-08-11T10:37:29.515+03:00  INFO 18992 --- [main] d.b.s.repository.CompanyRepository       : init company repository
+2024-08-11T10:37:29.574+03:00  INFO 18992 --- [main] d.b.scbtspring.database.ConnectionPool   : init connection pool with pool size : 100
+2024-08-11T10:37:29.998+03:00  INFO 18992 --- [main] d.b.s.i.service.CompanyServiceIT         : Started CompanyServiceIT in 10.77 seconds (process running for 13.682)
+2024-08-11T10:37:49.074+03:00  INFO 18992 --- [SpringApplicationShutdownHook] d.b.scbtspring.database.ConnectionPool   : clean connection pool
+2024-08-11T10:37:49.075+03:00  INFO 18992 --- [SpringApplicationShutdownHook] d.b.scbtspring.database.ConnectionPool   : clean connection pool
+2024-08-11T10:37:49.076+03:00  INFO 18992 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-11T10:37:49.081+03:00  INFO 18992 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-08-11T10:37:49.090+03:00  INFO 18992 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-08-11T10:38:06.951+03:00  INFO 24264 --- [main] d.b.s.i.service.CompanyServiceIT         : Starting CompanyServiceIT using Java 19.0.2 with PID 24264 (started by Rustam in C:\Users\Rustam\IdeaProjects\spring_prep)
+2024-08-11T10:38:06.954+03:00  INFO 24264 --- [main] d.b.s.i.service.CompanyServiceIT         : The following 1 profile is active: "test"
+2024-08-11T10:38:08.011+03:00  INFO 24264 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-11T10:38:08.072+03:00  INFO 24264 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 41 ms. Found 0 JPA repository interfaces.
+2024-08-11T10:38:11.036+03:00  INFO 24264 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-11T10:38:11.555+03:00  INFO 24264 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1c62c3fd
+2024-08-11T10:38:11.559+03:00  INFO 24264 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-11T10:38:11.908+03:00  INFO 24264 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-11T10:38:12.155+03:00  INFO 24264 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-08-11T10:38:12.285+03:00  INFO 24264 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-11T10:38:12.767+03:00  INFO 24264 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-11T10:38:15.566+03:00  INFO 24264 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-11T10:38:15.662+03:00  INFO 24264 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-11T10:38:15.684+03:00  INFO 24264 --- [main] d.b.scbtspring.config.JpaConfiguration   : Jpa configuration was enabled.
+2024-08-11T10:38:15.714+03:00  INFO 24264 --- [main] d.b.scbtspring.database.ConnectionPool   : init connection pool with pool size : 12
+2024-08-11T10:38:15.716+03:00  INFO 24264 --- [main] d.b.s.repository.CompanyRepository       : init company repository
+2024-08-11T10:38:15.786+03:00  INFO 24264 --- [main] d.b.scbtspring.database.ConnectionPool   : init connection pool with pool size : 100
+2024-08-11T10:38:16.235+03:00  INFO 24264 --- [main] d.b.s.i.service.CompanyServiceIT         : Started CompanyServiceIT in 10.254 seconds (process running for 12.861)
+2024-08-11T10:38:27.493+03:00  INFO 24264 --- [SpringApplicationShutdownHook] d.b.scbtspring.database.ConnectionPool   : clean connection pool
+2024-08-11T10:38:27.493+03:00  INFO 24264 --- [SpringApplicationShutdownHook] d.b.scbtspring.database.ConnectionPool   : clean connection pool
+2024-08-11T10:38:27.494+03:00  INFO 24264 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-11T10:38:27.498+03:00  INFO 24264 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-08-11T10:38:27.518+03:00  INFO 24264 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-08-11T10:38:34.447+03:00  INFO 22020 --- [main] d.b.s.i.service.CompanyServiceIT         : Starting CompanyServiceIT using Java 19.0.2 with PID 22020 (started by Rustam in C:\Users\Rustam\IdeaProjects\spring_prep)
+2024-08-11T10:38:34.451+03:00  INFO 22020 --- [main] d.b.s.i.service.CompanyServiceIT         : The following 1 profile is active: "test"
+2024-08-11T10:38:35.582+03:00  INFO 22020 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-11T10:38:35.644+03:00  INFO 22020 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 39 ms. Found 0 JPA repository interfaces.
+2024-08-11T10:38:38.526+03:00  INFO 22020 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-11T10:38:38.983+03:00  INFO 22020 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@164d01ba
+2024-08-11T10:38:38.987+03:00  INFO 22020 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-11T10:38:39.329+03:00  INFO 22020 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-11T10:38:39.585+03:00  INFO 22020 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-08-11T10:38:39.717+03:00  INFO 22020 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-11T10:38:40.121+03:00  INFO 22020 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-11T10:38:42.837+03:00  INFO 22020 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-11T10:38:42.951+03:00  INFO 22020 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-11T10:38:42.970+03:00  INFO 22020 --- [main] d.b.scbtspring.config.JpaConfiguration   : Jpa configuration was enabled.
+2024-08-11T10:38:42.999+03:00  INFO 22020 --- [main] d.b.scbtspring.database.ConnectionPool   : init connection pool with pool size : 12
+2024-08-11T10:38:43.002+03:00  INFO 22020 --- [main] d.b.s.repository.CompanyRepository       : init company repository
+2024-08-11T10:38:43.069+03:00  INFO 22020 --- [main] d.b.scbtspring.database.ConnectionPool   : init connection pool with pool size : 100
+2024-08-11T10:38:43.528+03:00  INFO 22020 --- [main] d.b.s.i.service.CompanyServiceIT         : Started CompanyServiceIT in 10.031 seconds (process running for 12.682)
+2024-08-11T10:40:56.169+03:00  WARN 22020 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m17s76ms857µs).
+2024-08-11T10:40:56.245+03:00  INFO 22020 --- [SpringApplicationShutdownHook] d.b.scbtspring.database.ConnectionPool   : clean connection pool
+2024-08-11T10:40:56.246+03:00  INFO 22020 --- [SpringApplicationShutdownHook] d.b.scbtspring.database.ConnectionPool   : clean connection pool
+2024-08-11T10:40:56.247+03:00  INFO 22020 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-11T10:40:56.254+03:00  INFO 22020 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-08-11T10:40:56.269+03:00  INFO 22020 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-08-11T10:41:07.472+03:00  INFO 19312 --- [main] d.b.s.i.service.CompanyServiceIT         : Starting CompanyServiceIT using Java 19.0.2 with PID 19312 (started by Rustam in C:\Users\Rustam\IdeaProjects\spring_prep)
+2024-08-11T10:41:07.475+03:00  INFO 19312 --- [main] d.b.s.i.service.CompanyServiceIT         : The following 1 profile is active: "test"
+2024-08-11T10:41:08.516+03:00  INFO 19312 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-11T10:41:08.578+03:00  INFO 19312 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 41 ms. Found 0 JPA repository interfaces.
+2024-08-11T10:41:11.405+03:00  INFO 19312 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-11T10:41:11.919+03:00  INFO 19312 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@164d01ba
+2024-08-11T10:41:11.923+03:00  INFO 19312 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-11T10:41:12.276+03:00  INFO 19312 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-11T10:41:12.512+03:00  INFO 19312 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-08-11T10:41:12.657+03:00  INFO 19312 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-11T10:41:13.158+03:00  INFO 19312 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-11T10:41:16.015+03:00  INFO 19312 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-11T10:41:16.113+03:00  INFO 19312 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-11T10:41:16.140+03:00  INFO 19312 --- [main] d.b.scbtspring.config.JpaConfiguration   : Jpa configuration was enabled.
+2024-08-11T10:41:16.166+03:00  INFO 19312 --- [main] d.b.scbtspring.database.ConnectionPool   : init connection pool with pool size : 12
+2024-08-11T10:41:16.168+03:00  INFO 19312 --- [main] d.b.s.repository.CompanyRepository       : init company repository
+2024-08-11T10:41:16.236+03:00  INFO 19312 --- [main] d.b.scbtspring.database.ConnectionPool   : init connection pool with pool size : 100
+2024-08-11T10:41:16.717+03:00  INFO 19312 --- [main] d.b.s.i.service.CompanyServiceIT         : Started CompanyServiceIT in 10.176 seconds (process running for 12.921)
+2024-08-11T11:06:05.247+03:00  WARN 19312 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=24m53s234ms81µs500ns).
+2024-08-11T11:06:06.225+03:00  INFO 19312 --- [SpringApplicationShutdownHook] d.b.scbtspring.database.ConnectionPool   : clean connection pool
+2024-08-11T11:06:06.226+03:00  INFO 19312 --- [SpringApplicationShutdownHook] d.b.scbtspring.database.ConnectionPool   : clean connection pool
+2024-08-11T11:06:06.226+03:00  INFO 19312 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-11T11:06:06.230+03:00  INFO 19312 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-08-11T11:06:06.240+03:00  INFO 19312 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
