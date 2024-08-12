@@ -59,8 +59,17 @@ class CompanyRepositoryTest {
     }
 
     @Test
+    void testQuery() {
+        companyRepository.findByName("Sovcombank");
+        companyRepository.findAllByNameContainingIgnoreCase("a");
+    }
+
+    @Test
     void testNamedQuery() {
-        List<Company> some = entityManager.createNamedQuery("findCompanies", Company.class).getResultList();
-        System.out.println(some);
+        List<Company> firstResult = entityManager.createNamedQuery("Company.findByIdIn", Company.class)
+                .setParameter("id1", 1L)
+                .setParameter("id2", 2L)
+                .getResultList();
+        System.out.println(firstResult);
     }
 }

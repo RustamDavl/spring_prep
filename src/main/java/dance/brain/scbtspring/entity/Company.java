@@ -6,6 +6,11 @@ import lombok.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@NamedQuery(name = "Company.findByIdIn",
+        query = """
+                select c from Company c
+                where c.id in (:id1, :id2)
+                """)
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
