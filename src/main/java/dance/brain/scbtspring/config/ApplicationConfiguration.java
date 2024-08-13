@@ -25,11 +25,11 @@ public class ApplicationConfiguration {
         return new ConnectionPool("username-test", 100);
     }
 
-    @Bean
-    @Profile("prod")
-    public UserRepository userRepository2() {
-        return new UserRepository(pool3());
-    }
+//    @Bean
+//    @Profile("prod")
+//    public UserRepository userRepository2() {
+//        return new UserRepository(pool3());
+//    }
 
 
 }

@@ -2,6 +2,7 @@ package dance.brain.scbtspring.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.BatchSize;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +30,7 @@ public class Company {
     private List<User> users = new ArrayList<>();
 
     @Builder.Default
+    @BatchSize(size = 5)
     @ElementCollection
     @CollectionTable(name = "company_locales",
             joinColumns = @JoinColumn(name = "company_id"))

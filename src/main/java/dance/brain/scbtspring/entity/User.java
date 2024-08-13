@@ -1,10 +1,7 @@
 package dance.brain.scbtspring.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -28,6 +25,8 @@ public class User {
 
     private String firstname;
 
+    private String lastname;
+
     @Enumerated(EnumType.STRING)
     private Role role;
 
@@ -36,10 +35,12 @@ public class User {
     private Company company;
 
     @OneToMany(mappedBy = "user")
+    @ToString.Exclude
     @Builder.Default
     private List<Payment> payments = new ArrayList<>();
 
     @OneToMany(mappedBy = "user")
+    @ToString.Exclude
     @Builder.Default
     private List<UsersChat> usersChats = new ArrayList<>();
 }
