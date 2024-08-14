@@ -5,11 +5,14 @@ import dance.brain.scbtspring.entity.Role;
 import dance.brain.scbtspring.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -35,4 +38,11 @@ public interface UserRepository extends JpaRepository<User, Long> {
             """)
     @Modifying(clearAutomatically = true)
     int updateRoles(Role role, Long... ids);
+
+    Optional<User> findFirstByOrderByIdDesc();
+
+    List<User> findTop3ByBirthDateBeforeOrderByIdDesc(LocalDate localDate);
+    List<User> findTop3ByBirthDateBefore(LocalDate localDate, Sort sort);
+
+    List<User> findAllBy(Pageable pageable);
 }
