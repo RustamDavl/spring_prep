@@ -33,7 +33,7 @@ public class CompanyServiceIT {
     void findById() {
         Optional<CompanyReadDto> actualResult = companyService.findById(COMPANY_ID);
         assertThat(actualResult).isPresent();
-        var expected = new CompanyReadDto(COMPANY_ID);
+        var expected = new CompanyReadDto(COMPANY_ID, null);
         assertThat(actualResult.get()).isEqualTo(expected);
     }
 }

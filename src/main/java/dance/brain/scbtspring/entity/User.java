@@ -2,18 +2,24 @@ package dance.brain.scbtspring.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.envers.Audited;
+import org.hibernate.envers.NotAudited;
+import org.hibernate.envers.RelationTargetAuditMode;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+@NamedEntityGraph(name = "User.company",
+        attributeNodes = @NamedAttributeNode("company"))
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @Entity
 @Table(name = "users")
-public class User {
+@Audited(targetAuditMode = RelationTargetAuditMode.NOT_AUDITED)
+public class User extends AuditingEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -37,10 +43,12 @@ public class User {
     @OneToMany(mappedBy = "user")
     @ToString.Exclude
     @Builder.Default
+    @NotAudited
     private List<Payment> payments = new ArrayList<>();
 
     @OneToMany(mappedBy = "user")
     @ToString.Exclude
     @Builder.Default
+    @NotAudited
     private List<UsersChat> usersChats = new ArrayList<>();
 }

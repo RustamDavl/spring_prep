@@ -24,11 +24,21 @@ repo:
   name: test
 logging:
   level:
+    org:
+      springframework:
+        jdbc:
+          core: trace
     root: INFO
   file:
     name: test.log
     path: /
 spring:
+  mvc:
+    view:
+      suffix: .jsp
+      prefix: /WEB-INF/jsp/
+  liquibase:
+    change-log: classpath:liquibase/master/changelog-master.yaml
   datasource:
     url: jdbc:postgresql://localhost:5432/scbt
     username: scbt
@@ -41,3 +51,5 @@ spring:
         format_sql: true
         hbm2ddl:
           auto: validate
+        jdbc:
+          batch_size: 50

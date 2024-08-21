@@ -1,17 +1,14 @@
 package dance.brain.scbtspring.config;
 
 import lombok.Getter;
-import lombok.Setter;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.bind.ConstructorBinding;
-import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Map;
 
 @Getter
-@ConfigurationProperties(prefix = "db")
+@ConfigurationProperties(prefix = "liquibase")
 public class DatabaseProperties {
     private final String username;
     private final String password;

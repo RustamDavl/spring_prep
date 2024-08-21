@@ -1,16 +1,21 @@
 package dance.brain.scbtspring.integration.repository;
 
+import dance.brain.scbtspring.dto.PersonalInfo;
+import dance.brain.scbtspring.dto.PersonalInfoWithCompany;
+import dance.brain.scbtspring.dto.UserAndCompanylInfo;
+import dance.brain.scbtspring.dto.UserFilter;
 import dance.brain.scbtspring.entity.Locale;
 import dance.brain.scbtspring.entity.Role;
 import dance.brain.scbtspring.entity.User;
+import dance.brain.scbtspring.integration.IntegrationTestBase;
 import dance.brain.scbtspring.integration.annotation.IT;
 import dance.brain.scbtspring.repository.UserRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.*;
+import org.springframework.test.annotation.Commit;
+import org.springframework.test.context.jdbc.Sql;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -20,8 +25,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertSame;
 
-@IT
-class UserRepositoryTest {
+class UserRepositoryTest extends IntegrationTestBase {
 
     private final UserRepository userRepository;
 
@@ -71,10 +75,61 @@ class UserRepositoryTest {
 
         userRepository.findTop3ByBirthDateBefore(LocalDate.now(), sortBy2);
     }
+
     @Test
     void checkPageable() {
-        Pageable pageable = PageRequest.of(1, 2, Sort.by("id"));
-        List<User> users = userRepository.findAllBy(pageable);
+        Pageable pageable = PageRequest.of(0, 2, Sort.by("id"));
+        Page<User> page = userRepository.findAllBy(pageable);
+        System.out.println(page.getTotalPages());
+        System.out.println(page.getTotalElements());
+        page.getContent().forEach(user -> System.out.println(user.getCompany().getName()));
+
+        while (page.hasNext()) {
+            page = userRepository.findAllBy(page.nextPageable());
+            page.getContent().forEach(user -> System.out.println(user.getCompany().getName()));
+        }
+    }
+
+    @Test
+    void findAllByCompanyId_Class_Projection() {
+        List<PersonalInfo> allByCompanyId = userRepository.findAllByCompanyId(1L);
+        System.out.println(allByCompanyId);
+    }
+
+    @Test
+    void findAllByCompanyId_Interface_Projection() {
+        List<PersonalInfoWithCompany> list = userRepository.findAllByCompanyIdProjection(1L);
+        list.forEach(personalInfoWithCompany -> System.out.println(personalInfoWithCompany.getCompanyId() + "\n" +
+                                                                   personalInfoWithCompany.getCompanyName() + "\n" +
+                                                                   personalInfoWithCompany.getFirstname() + "\n" +
+                                                                   personalInfoWithCompany.getBirthDate() + "\n" +
+                                                                   personalInfoWithCompany.getFullName() + "\n"));
+    }
+
+    @Test
+    void checkCustomImplementation() {
+        UserFilter userFilter = new UserFilter(null, "ov", LocalDate.now());
+        List<User> users = userRepository.findAllByUserFilter(userFilter);
+        System.out.println(users);
+    }
+
+    @Test
+    void checkAuditing() {
+        Optional<User> ivan = userRepository.findById(1L);
+        ivan.get().setBirthDate(ivan.get().getBirthDate().plusYears(1));
+        userRepository.flush();
+        System.out.println();
+    }
+
+    @Test
+    void checkJdbcTemplate() {
+        List<UserAndCompanylInfo> users = userRepository.findAllByCompanyIdJdbc(3L);
         users.forEach(System.out::println);
+    }
+
+    @Test
+    void checkBatchUpdate() {
+        List<User> users = userRepository.findAll();
+        userRepository.updateCompanyAndRole(users);
     }
 }
