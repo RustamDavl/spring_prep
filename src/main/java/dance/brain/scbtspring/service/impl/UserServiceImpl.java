@@ -1,26 +1,28 @@
 package dance.brain.scbtspring.service.impl;
 
+import dance.brain.scbtspring.entity.Company;
 import dance.brain.scbtspring.entity.User;
-import dance.brain.scbtspring.exception.UserAlreadyExistsException;
-import dance.brain.scbtspring.exception.UserNotFoundException;
+import dance.brain.scbtspring.exception.EntityNotFoundException;
 import dance.brain.scbtspring.repository.UserRepository;
+import dance.brain.scbtspring.service.CompanyService;
 import dance.brain.scbtspring.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @Transactional(readOnly = true)
 public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
+    private final CompanyService companyService;
 
     @Autowired
-    public UserServiceImpl(UserRepository userRepository) {
+    public UserServiceImpl(UserRepository userRepository, CompanyService companyService) {
         this.userRepository = userRepository;
+        this.companyService = companyService;
     }
 
     @Override
@@ -31,21 +33,32 @@ public class UserServiceImpl implements UserService {
     @Override
     public User getById(Long id) {
         return userRepository.findById(id)
-                .orElseThrow(() -> new UserNotFoundException("User not found."));
+                .orElseThrow(() -> new EntityNotFoundException("User not found."));
     }
 
     @Override
     @Transactional
-    public User create(User user) {
+    public User create(Long companyId, User user) {
+        if (companyId == null) {
+            return userRepository.save(user);
+        }
+        Company company = companyService.getById(companyId);
+        user.setCompany(company);
         return userRepository.save(user);
     }
 
     @Override
     @Transactional
-    public User update(Long id, User user) {
+    public User update(Long companyId, Long id, User user) {
         User maybeUser = getById(id);
+        if (companyId == null) {
+            updateFields(maybeUser, user);
+            return userRepository.saveAndFlush(maybeUser);
+        }
+        Company company = companyService.getById(companyId);
         updateFields(maybeUser, user);
-        return userRepository.save(maybeUser);
+        maybeUser.setCompany(company);
+        return userRepository.saveAndFlush(maybeUser);
     }
 
     @Override

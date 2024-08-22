@@ -53,3 +53,4 @@ spring:
           auto: validate
         jdbc:
           batch_size: 50
+    open-in-view: false

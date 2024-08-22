@@ -1,135 +1,301 @@
-2024-08-21T19:36:17.612+03:00  INFO 19428 --- [main] d.brain.scbtspring.ApplicationRunner     : Starting ApplicationRunner using Java 17.0.6 with PID 19428 (C:\Users\Rustam\IdeaProjects\ScbtSpring\target\classes started by Rustam in C:\Users\Rustam\IdeaProjects\ScbtSpring)
-2024-08-21T19:36:17.619+03:00  INFO 19428 --- [main] d.brain.scbtspring.ApplicationRunner     : No active profile set, falling back to 1 default profile: "default"
-2024-08-21T19:36:18.768+03:00  INFO 19428 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-08-21T19:36:18.832+03:00  INFO 19428 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 56 ms. Found 2 JPA repository interfaces.
-2024-08-21T19:36:19.409+03:00  INFO 19428 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-08-21T19:36:19.418+03:00  INFO 19428 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-08-21T19:36:19.418+03:00  INFO 19428 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2024-08-21T19:36:19.557+03:00  INFO 19428 --- [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-2024-08-21T19:36:19.561+03:00  INFO 19428 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-08-21T19:36:19.561+03:00  INFO 19428 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1832 ms
-2024-08-21T19:36:19.681+03:00  INFO 19428 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-08-21T19:36:20.712+03:00 ERROR 19428 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
-
-org.postgresql.util.PSQLException: Подсоединение по адресу localhost:5432 отклонено. Проверьте что хост и порт указаны правильно и что postmaster принимает TCP/IP-подсоединения.
-	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:346) ~[postgresql-42.7.3.jar:42.7.3]
-	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54) ~[postgresql-42.7.3.jar:42.7.3]
-	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:273) ~[postgresql-42.7.3.jar:42.7.3]
-	at org.postgresql.Driver.makeConnection(Driver.java:446) ~[postgresql-42.7.3.jar:42.7.3]
-	at org.postgresql.Driver.connect(Driver.java:298) ~[postgresql-42.7.3.jar:42.7.3]
-	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:359) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:470) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:100) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-5.0.1.jar:na]
-	at liquibase.integration.spring.SpringLiquibase.lambda$afterPropertiesSet$0(SpringLiquibase.java:290) ~[liquibase-core-4.25.0.jar:na]
-	at liquibase.Scope.lambda$child$0(Scope.java:184) ~[liquibase-core-4.25.0.jar:na]
-	at liquibase.Scope.child(Scope.java:193) ~[liquibase-core-4.25.0.jar:na]
-	at liquibase.Scope.child(Scope.java:183) ~[liquibase-core-4.25.0.jar:na]
-	at liquibase.Scope.child(Scope.java:162) ~[liquibase-core-4.25.0.jar:na]
-	at liquibase.Scope.child(Scope.java:250) ~[liquibase-core-4.25.0.jar:na]
-	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:286) ~[liquibase-core-4.25.0.jar:na]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1234) ~[spring-context-6.1.6.jar:6.1.6]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952) ~[spring-context-6.1.6.jar:6.1.6]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624) ~[spring-context-6.1.6.jar:6.1.6]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.5.jar:3.2.5]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.2.5.jar:3.2.5]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.2.5.jar:3.2.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334) ~[spring-boot-3.2.5.jar:3.2.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-3.2.5.jar:3.2.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-3.2.5.jar:3.2.5]
-	at dance.brain.scbtspring.ApplicationRunner.main(ApplicationRunner.java:23) ~[classes/:na]
-Caused by: java.net.ConnectException: Connection refused: no further information
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672) ~[na:na]
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549) ~[na:na]
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597) ~[na:na]
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327) ~[na:na]
-	at java.base/java.net.Socket.connect(Socket.java:633) ~[na:na]
-	at org.postgresql.core.PGStream.createSocket(PGStream.java:243) ~[postgresql-42.7.3.jar:42.7.3]
-	at org.postgresql.core.PGStream.<init>(PGStream.java:98) ~[postgresql-42.7.3.jar:42.7.3]
-	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:136) ~[postgresql-42.7.3.jar:42.7.3]
-	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:262) ~[postgresql-42.7.3.jar:42.7.3]
-	... 38 common frames omitted
-
-2024-08-21T19:36:20.718+03:00  WARN 19428 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.DatabaseException: org.postgresql.util.PSQLException: Подсоединение по адресу localhost:5432 отклонено. Проверьте что хост и порт указаны правильно и что postmaster принимает TCP/IP-подсоединения.
-2024-08-21T19:36:20.719+03:00  INFO 19428 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2024-08-21T19:36:20.726+03:00  INFO 19428 --- [main] .s.b.a.l.ConditionEvaluationReportLogger : 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2024-08-21T19:36:20.736+03:00 ERROR 19428 --- [main] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.DatabaseException: org.postgresql.util.PSQLException: Подсоединение по адресу localhost:5432 отклонено. Проверьте что хост и порт указаны правильно и что postmaster принимает TCP/IP-подсоединения.
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1234) ~[spring-context-6.1.6.jar:6.1.6]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952) ~[spring-context-6.1.6.jar:6.1.6]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624) ~[spring-context-6.1.6.jar:6.1.6]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.5.jar:3.2.5]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.2.5.jar:3.2.5]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.2.5.jar:3.2.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334) ~[spring-boot-3.2.5.jar:3.2.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-3.2.5.jar:3.2.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-3.2.5.jar:3.2.5]
-	at dance.brain.scbtspring.ApplicationRunner.main(ApplicationRunner.java:23) ~[classes/:na]
-Caused by: liquibase.exception.UnexpectedLiquibaseException: liquibase.exception.DatabaseException: org.postgresql.util.PSQLException: Подсоединение по адресу localhost:5432 отклонено. Проверьте что хост и порт указаны правильно и что postmaster принимает TCP/IP-подсоединения.
-	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:303) ~[liquibase-core-4.25.0.jar:na]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782) ~[spring-beans-6.1.6.jar:6.1.6]
-	... 18 common frames omitted
-Caused by: liquibase.exception.DatabaseException: org.postgresql.util.PSQLException: Подсоединение по адресу localhost:5432 отклонено. Проверьте что хост и порт указаны правильно и что postmaster принимает TCP/IP-подсоединения.
-	at liquibase.integration.spring.SpringLiquibase.lambda$afterPropertiesSet$0(SpringLiquibase.java:295) ~[liquibase-core-4.25.0.jar:na]
-	at liquibase.Scope.lambda$child$0(Scope.java:184) ~[liquibase-core-4.25.0.jar:na]
-	at liquibase.Scope.child(Scope.java:193) ~[liquibase-core-4.25.0.jar:na]
-	at liquibase.Scope.child(Scope.java:183) ~[liquibase-core-4.25.0.jar:na]
-	at liquibase.Scope.child(Scope.java:162) ~[liquibase-core-4.25.0.jar:na]
-	at liquibase.Scope.child(Scope.java:250) ~[liquibase-core-4.25.0.jar:na]
-	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:286) ~[liquibase-core-4.25.0.jar:na]
-	... 20 common frames omitted
-Caused by: org.postgresql.util.PSQLException: Подсоединение по адресу localhost:5432 отклонено. Проверьте что хост и порт указаны правильно и что postmaster принимает TCP/IP-подсоединения.
-	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:346) ~[postgresql-42.7.3.jar:42.7.3]
-	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54) ~[postgresql-42.7.3.jar:42.7.3]
-	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:273) ~[postgresql-42.7.3.jar:42.7.3]
-	at org.postgresql.Driver.makeConnection(Driver.java:446) ~[postgresql-42.7.3.jar:42.7.3]
-	at org.postgresql.Driver.connect(Driver.java:298) ~[postgresql-42.7.3.jar:42.7.3]
-	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:359) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:470) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:100) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-5.0.1.jar:na]
-	at liquibase.integration.spring.SpringLiquibase.lambda$afterPropertiesSet$0(SpringLiquibase.java:290) ~[liquibase-core-4.25.0.jar:na]
-	... 26 common frames omitted
-Caused by: java.net.ConnectException: Connection refused: no further information
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672) ~[na:na]
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549) ~[na:na]
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597) ~[na:na]
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327) ~[na:na]
-	at java.base/java.net.Socket.connect(Socket.java:633) ~[na:na]
-	at org.postgresql.core.PGStream.createSocket(PGStream.java:243) ~[postgresql-42.7.3.jar:42.7.3]
-	at org.postgresql.core.PGStream.<init>(PGStream.java:98) ~[postgresql-42.7.3.jar:42.7.3]
-	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:136) ~[postgresql-42.7.3.jar:42.7.3]
-	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:262) ~[postgresql-42.7.3.jar:42.7.3]
-	... 38 common frames omitted
-
+2024-08-22T21:01:53.956+03:00  INFO 14768 --- [main] d.b.s.i.controller.UserControllerIT      : Starting UserControllerIT using Java 17.0.6 with PID 14768 (started by Rustam in C:\Users\Rustam\IdeaProjects\ScbtSpring)
+2024-08-22T21:01:53.963+03:00  INFO 14768 --- [main] d.b.s.i.controller.UserControllerIT      : The following 1 profile is active: "test"
+2024-08-22T21:01:54.859+03:00  INFO 14768 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-22T21:01:54.914+03:00  INFO 14768 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 48 ms. Found 2 JPA repository interfaces.
+2024-08-22T21:01:56.125+03:00  INFO 14768 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-22T21:01:56.307+03:00  INFO 14768 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@33e8694b
+2024-08-22T21:01:56.308+03:00  INFO 14768 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-22T21:01:56.474+03:00  INFO 14768 --- [main] liquibase.database                       : Set default schema name to public
+2024-08-22T21:01:56.710+03:00  INFO 14768 --- [main] liquibase.changelog                      : Creating database history table with name: public.databasechangelog
+2024-08-22T21:01:56.755+03:00  INFO 14768 --- [main] liquibase.changelog                      : Reading from public.databasechangelog
+2024-08-22T21:01:56.838+03:00  INFO 14768 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
+2024-08-22T21:01:56.841+03:00  INFO 14768 --- [main] liquibase.command                        : Using deploymentId: 4349716841
+2024-08-22T21:01:56.845+03:00  INFO 14768 --- [main] liquibase.changelog                      : Reading from public.databasechangelog
+2024-08-22T21:01:56.885+03:00  INFO 14768 --- [main] liquibase.ui                             : Running Changeset: liquibase/changesets/V1_init_all-tables.sql::1::rustam
+2024-08-22T21:01:56.907+03:00  INFO 14768 --- [main] liquibase.changelog                      : Custom SQL executed
+2024-08-22T21:01:56.909+03:00  INFO 14768 --- [main] liquibase.changelog                      : ChangeSet liquibase/changesets/V1_init_all-tables.sql::1::rustam ran successfully in 22ms
+2024-08-22T21:01:56.921+03:00  INFO 14768 --- [main] liquibase.ui                             : Running Changeset: liquibase/changesets/V1_init_all-tables.sql::2::rustam
+2024-08-22T21:01:56.926+03:00  INFO 14768 --- [main] liquibase.changelog                      : Custom SQL executed
+2024-08-22T21:01:56.928+03:00  INFO 14768 --- [main] liquibase.changelog                      : ChangeSet liquibase/changesets/V1_init_all-tables.sql::2::rustam ran successfully in 7ms
+2024-08-22T21:01:56.932+03:00  INFO 14768 --- [main] liquibase.ui                             : Running Changeset: liquibase/changesets/V1_init_all-tables.sql::3::rustam
+2024-08-22T21:01:56.940+03:00  INFO 14768 --- [main] liquibase.changelog                      : Custom SQL executed
+2024-08-22T21:01:56.942+03:00  INFO 14768 --- [main] liquibase.changelog                      : ChangeSet liquibase/changesets/V1_init_all-tables.sql::3::rustam ran successfully in 9ms
+2024-08-22T21:01:56.946+03:00  INFO 14768 --- [main] liquibase.ui                             : Running Changeset: liquibase/changesets/V1_init_all-tables.sql::4::rustam
+2024-08-22T21:01:56.952+03:00  INFO 14768 --- [main] liquibase.changelog                      : Custom SQL executed
+2024-08-22T21:01:56.954+03:00  INFO 14768 --- [main] liquibase.changelog                      : ChangeSet liquibase/changesets/V1_init_all-tables.sql::4::rustam ran successfully in 8ms
+2024-08-22T21:01:56.960+03:00  INFO 14768 --- [main] liquibase.ui                             : Running Changeset: liquibase/changesets/V1_init_all-tables.sql::5::rustam
+2024-08-22T21:01:56.966+03:00  INFO 14768 --- [main] liquibase.changelog                      : Custom SQL executed
+2024-08-22T21:01:56.968+03:00  INFO 14768 --- [main] liquibase.changelog                      : ChangeSet liquibase/changesets/V1_init_all-tables.sql::5::rustam ran successfully in 8ms
+2024-08-22T21:01:56.972+03:00  INFO 14768 --- [main] liquibase.ui                             : Running Changeset: liquibase/changesets/V1_init_all-tables.sql::6::rustam
+2024-08-22T21:01:56.979+03:00  INFO 14768 --- [main] liquibase.changelog                      : Custom SQL executed
+2024-08-22T21:01:56.982+03:00  INFO 14768 --- [main] liquibase.changelog                      : ChangeSet liquibase/changesets/V1_init_all-tables.sql::6::rustam ran successfully in 9ms
+2024-08-22T21:01:56.987+03:00  INFO 14768 --- [main] liquibase.ui                             : Running Changeset: liquibase/changesets/V1_audit_all-tables.sql::1::rustam
+2024-08-22T21:01:56.991+03:00  INFO 14768 --- [main] liquibase.changelog                      : Custom SQL executed
+2024-08-22T21:01:56.993+03:00  INFO 14768 --- [main] liquibase.changelog                      : ChangeSet liquibase/changesets/V1_audit_all-tables.sql::1::rustam ran successfully in 5ms
+2024-08-22T21:01:56.996+03:00  INFO 14768 --- [main] liquibase.ui                             : Running Changeset: liquibase/changesets/V1_audit_all-tables.sql::2::rustam
+2024-08-22T21:01:56.998+03:00  INFO 14768 --- [main] liquibase.changelog                      : Custom SQL executed
+2024-08-22T21:01:57.000+03:00  INFO 14768 --- [main] liquibase.changelog                      : ChangeSet liquibase/changesets/V1_audit_all-tables.sql::2::rustam ran successfully in 4ms
+2024-08-22T21:01:57.003+03:00  INFO 14768 --- [main] liquibase.ui                             : Running Changeset: liquibase/changesets/V1_audit_all-tables.sql::3::rustam
+2024-08-22T21:01:57.006+03:00  INFO 14768 --- [main] liquibase.changelog                      : Custom SQL executed
+2024-08-22T21:01:57.007+03:00  INFO 14768 --- [main] liquibase.changelog                      : ChangeSet liquibase/changesets/V1_audit_all-tables.sql::3::rustam ran successfully in 4ms
+2024-08-22T21:01:57.010+03:00  INFO 14768 --- [main] liquibase.ui                             : Running Changeset: liquibase/changesets/V1_audit_all-tables.sql::4::rustam
+2024-08-22T21:01:57.014+03:00  INFO 14768 --- [main] liquibase.changelog                      : Custom SQL executed
+2024-08-22T21:01:57.015+03:00  INFO 14768 --- [main] liquibase.changelog                      : ChangeSet liquibase/changesets/V1_audit_all-tables.sql::4::rustam ran successfully in 5ms
+2024-08-22T21:01:57.023+03:00  INFO 14768 --- [main] liquibase.util                           : UPDATE SUMMARY
+2024-08-22T21:01:57.023+03:00  INFO 14768 --- [main] liquibase.util                           : Run:                         10
+2024-08-22T21:01:57.023+03:00  INFO 14768 --- [main] liquibase.util                           : Previously run:               0
+2024-08-22T21:01:57.023+03:00  INFO 14768 --- [main] liquibase.util                           : Filtered out:                 0
+2024-08-22T21:01:57.023+03:00  INFO 14768 --- [main] liquibase.util                           : -------------------------------
+2024-08-22T21:01:57.024+03:00  INFO 14768 --- [main] liquibase.util                           : Total change sets:           10
+2024-08-22T21:01:57.024+03:00  INFO 14768 --- [main] liquibase.util                           : Update summary generated
+2024-08-22T21:01:57.026+03:00  INFO 14768 --- [main] liquibase.command                        : Update command completed successfully.
+2024-08-22T21:01:57.027+03:00  INFO 14768 --- [main] liquibase.ui                             : Liquibase: Update has been successful. Rows affected: 10
+2024-08-22T21:01:57.032+03:00  INFO 14768 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2024-08-22T21:01:57.033+03:00  INFO 14768 --- [main] liquibase.command                        : Command execution complete
+2024-08-22T21:01:57.145+03:00  INFO 14768 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-22T21:01:57.256+03:00  INFO 14768 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-08-22T21:01:57.306+03:00  INFO 14768 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-22T21:01:57.412+03:00  INFO 14768 --- [main] o.h.e.boot.internal.EnversServiceImpl    : Envers integration enabled? : true
+2024-08-22T21:01:57.452+03:00  INFO 14768 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-22T21:01:57.913+03:00  INFO 14768 --- [main] o.h.e.c.i.m.AuditMetadataGenerator       : Adding properties for entity: dance.brain.scbtspring.entity.User
+2024-08-22T21:01:58.531+03:00  INFO 14768 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-22T21:01:58.854+03:00  INFO 14768 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-22T21:01:58.861+03:00  INFO 14768 --- [main] d.b.scbtspring.config.JpaConfiguration   : Jpa configuration was enabled.
+2024-08-22T21:01:59.219+03:00  INFO 14768 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-08-22T21:01:59.460+03:00  INFO 14768 --- [main] d.b.scbtspring.database.ConnectionPool   : init connection pool with pool size : 12
+2024-08-22T21:01:59.461+03:00  INFO 14768 --- [main] d.b.scbtspring.database.ConnectionPool   : init connection pool with pool size : 100
+2024-08-22T21:01:59.607+03:00  WARN 14768 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-22T21:01:59.937+03:00  INFO 14768 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-08-22T21:01:59.937+03:00  INFO 14768 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-08-22T21:01:59.938+03:00  INFO 14768 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2024-08-22T21:01:59.962+03:00  INFO 14768 --- [main] d.b.s.i.controller.UserControllerIT      : Started UserControllerIT in 6.328 seconds (process running for 9.367)
+2024-08-22T21:02:00.331+03:00  INFO 14768 --- [SpringApplicationShutdownHook] d.b.scbtspring.database.ConnectionPool   : clean connection pool
+2024-08-22T21:02:00.332+03:00  INFO 14768 --- [SpringApplicationShutdownHook] d.b.scbtspring.database.ConnectionPool   : clean connection pool
+2024-08-22T21:02:00.333+03:00  INFO 14768 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-22T21:02:00.335+03:00  INFO 14768 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-08-22T21:02:00.341+03:00  INFO 14768 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-08-22T21:13:18.912+03:00  INFO 11660 --- [main] d.b.s.i.controller.UserControllerIT      : Starting UserControllerIT using Java 17.0.6 with PID 11660 (started by Rustam in C:\Users\Rustam\IdeaProjects\ScbtSpring)
+2024-08-22T21:13:18.913+03:00  INFO 11660 --- [main] d.b.s.i.controller.UserControllerIT      : The following 1 profile is active: "test"
+2024-08-22T21:13:19.270+03:00  INFO 11660 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-22T21:13:19.311+03:00  INFO 11660 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 37 ms. Found 2 JPA repository interfaces.
+2024-08-22T21:13:20.428+03:00  INFO 11660 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-22T21:13:20.570+03:00  INFO 11660 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@bea283b
+2024-08-22T21:13:20.572+03:00  INFO 11660 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-22T21:13:20.723+03:00  INFO 11660 --- [main] liquibase.database                       : Set default schema name to public
+2024-08-22T21:13:20.904+03:00  INFO 11660 --- [main] liquibase.changelog                      : Creating database history table with name: public.databasechangelog
+2024-08-22T21:13:20.942+03:00  INFO 11660 --- [main] liquibase.changelog                      : Reading from public.databasechangelog
+2024-08-22T21:13:21.014+03:00  INFO 11660 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
+2024-08-22T21:13:21.016+03:00  INFO 11660 --- [main] liquibase.command                        : Using deploymentId: 4350401016
+2024-08-22T21:13:21.019+03:00  INFO 11660 --- [main] liquibase.changelog                      : Reading from public.databasechangelog
+2024-08-22T21:13:21.046+03:00  INFO 11660 --- [main] liquibase.ui                             : Running Changeset: liquibase/changesets/V1_init_all-tables.sql::1::rustam
+2024-08-22T21:13:21.062+03:00  INFO 11660 --- [main] liquibase.changelog                      : Custom SQL executed
+2024-08-22T21:13:21.063+03:00  INFO 11660 --- [main] liquibase.changelog                      : ChangeSet liquibase/changesets/V1_init_all-tables.sql::1::rustam ran successfully in 16ms
+2024-08-22T21:13:21.071+03:00  INFO 11660 --- [main] liquibase.ui                             : Running Changeset: liquibase/changesets/V1_init_all-tables.sql::2::rustam
+2024-08-22T21:13:21.076+03:00  INFO 11660 --- [main] liquibase.changelog                      : Custom SQL executed
+2024-08-22T21:13:21.078+03:00  INFO 11660 --- [main] liquibase.changelog                      : ChangeSet liquibase/changesets/V1_init_all-tables.sql::2::rustam ran successfully in 7ms
+2024-08-22T21:13:21.082+03:00  INFO 11660 --- [main] liquibase.ui                             : Running Changeset: liquibase/changesets/V1_init_all-tables.sql::3::rustam
+2024-08-22T21:13:21.088+03:00  INFO 11660 --- [main] liquibase.changelog                      : Custom SQL executed
+2024-08-22T21:13:21.090+03:00  INFO 11660 --- [main] liquibase.changelog                      : ChangeSet liquibase/changesets/V1_init_all-tables.sql::3::rustam ran successfully in 7ms
+2024-08-22T21:13:21.093+03:00  INFO 11660 --- [main] liquibase.ui                             : Running Changeset: liquibase/changesets/V1_init_all-tables.sql::4::rustam
+2024-08-22T21:13:21.097+03:00  INFO 11660 --- [main] liquibase.changelog                      : Custom SQL executed
+2024-08-22T21:13:21.098+03:00  INFO 11660 --- [main] liquibase.changelog                      : ChangeSet liquibase/changesets/V1_init_all-tables.sql::4::rustam ran successfully in 4ms
+2024-08-22T21:13:21.102+03:00  INFO 11660 --- [main] liquibase.ui                             : Running Changeset: liquibase/changesets/V1_init_all-tables.sql::5::rustam
+2024-08-22T21:13:21.107+03:00  INFO 11660 --- [main] liquibase.changelog                      : Custom SQL executed
+2024-08-22T21:13:21.108+03:00  INFO 11660 --- [main] liquibase.changelog                      : ChangeSet liquibase/changesets/V1_init_all-tables.sql::5::rustam ran successfully in 6ms
+2024-08-22T21:13:21.112+03:00  INFO 11660 --- [main] liquibase.ui                             : Running Changeset: liquibase/changesets/V1_init_all-tables.sql::6::rustam
+2024-08-22T21:13:21.117+03:00  INFO 11660 --- [main] liquibase.changelog                      : Custom SQL executed
+2024-08-22T21:13:21.118+03:00  INFO 11660 --- [main] liquibase.changelog                      : ChangeSet liquibase/changesets/V1_init_all-tables.sql::6::rustam ran successfully in 6ms
+2024-08-22T21:13:21.121+03:00  INFO 11660 --- [main] liquibase.ui                             : Running Changeset: liquibase/changesets/V1_audit_all-tables.sql::1::rustam
+2024-08-22T21:13:21.125+03:00  INFO 11660 --- [main] liquibase.changelog                      : Custom SQL executed
+2024-08-22T21:13:21.126+03:00  INFO 11660 --- [main] liquibase.changelog                      : ChangeSet liquibase/changesets/V1_audit_all-tables.sql::1::rustam ran successfully in 4ms
+2024-08-22T21:13:21.129+03:00  INFO 11660 --- [main] liquibase.ui                             : Running Changeset: liquibase/changesets/V1_audit_all-tables.sql::2::rustam
+2024-08-22T21:13:21.132+03:00  INFO 11660 --- [main] liquibase.changelog                      : Custom SQL executed
+2024-08-22T21:13:21.133+03:00  INFO 11660 --- [main] liquibase.changelog                      : ChangeSet liquibase/changesets/V1_audit_all-tables.sql::2::rustam ran successfully in 4ms
+2024-08-22T21:13:21.136+03:00  INFO 11660 --- [main] liquibase.ui                             : Running Changeset: liquibase/changesets/V1_audit_all-tables.sql::3::rustam
+2024-08-22T21:13:21.138+03:00  INFO 11660 --- [main] liquibase.changelog                      : Custom SQL executed
+2024-08-22T21:13:21.140+03:00  INFO 11660 --- [main] liquibase.changelog                      : ChangeSet liquibase/changesets/V1_audit_all-tables.sql::3::rustam ran successfully in 4ms
+2024-08-22T21:13:21.142+03:00  INFO 11660 --- [main] liquibase.ui                             : Running Changeset: liquibase/changesets/V1_audit_all-tables.sql::4::rustam
+2024-08-22T21:13:21.145+03:00  INFO 11660 --- [main] liquibase.changelog                      : Custom SQL executed
+2024-08-22T21:13:21.147+03:00  INFO 11660 --- [main] liquibase.changelog                      : ChangeSet liquibase/changesets/V1_audit_all-tables.sql::4::rustam ran successfully in 4ms
+2024-08-22T21:13:21.156+03:00  INFO 11660 --- [main] liquibase.util                           : UPDATE SUMMARY
+2024-08-22T21:13:21.157+03:00  INFO 11660 --- [main] liquibase.util                           : Run:                         10
+2024-08-22T21:13:21.157+03:00  INFO 11660 --- [main] liquibase.util                           : Previously run:               0
+2024-08-22T21:13:21.157+03:00  INFO 11660 --- [main] liquibase.util                           : Filtered out:                 0
+2024-08-22T21:13:21.157+03:00  INFO 11660 --- [main] liquibase.util                           : -------------------------------
+2024-08-22T21:13:21.157+03:00  INFO 11660 --- [main] liquibase.util                           : Total change sets:           10
+2024-08-22T21:13:21.157+03:00  INFO 11660 --- [main] liquibase.util                           : Update summary generated
+2024-08-22T21:13:21.158+03:00  INFO 11660 --- [main] liquibase.command                        : Update command completed successfully.
+2024-08-22T21:13:21.159+03:00  INFO 11660 --- [main] liquibase.ui                             : Liquibase: Update has been successful. Rows affected: 10
+2024-08-22T21:13:21.164+03:00  INFO 11660 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2024-08-22T21:13:21.165+03:00  INFO 11660 --- [main] liquibase.command                        : Command execution complete
+2024-08-22T21:13:21.272+03:00  INFO 11660 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-22T21:13:21.339+03:00  INFO 11660 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-08-22T21:13:21.385+03:00  INFO 11660 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-22T21:13:21.493+03:00  INFO 11660 --- [main] o.h.e.boot.internal.EnversServiceImpl    : Envers integration enabled? : true
+2024-08-22T21:13:21.525+03:00  INFO 11660 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-22T21:13:21.867+03:00  INFO 11660 --- [main] o.h.e.c.i.m.AuditMetadataGenerator       : Adding properties for entity: dance.brain.scbtspring.entity.User
+2024-08-22T21:13:22.368+03:00  INFO 11660 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-22T21:13:22.625+03:00  INFO 11660 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-22T21:13:22.633+03:00  INFO 11660 --- [main] d.b.scbtspring.config.JpaConfiguration   : Jpa configuration was enabled.
+2024-08-22T21:13:22.964+03:00  INFO 11660 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-08-22T21:13:23.178+03:00  INFO 11660 --- [main] d.b.scbtspring.database.ConnectionPool   : init connection pool with pool size : 12
+2024-08-22T21:13:23.178+03:00  INFO 11660 --- [main] d.b.scbtspring.database.ConnectionPool   : init connection pool with pool size : 100
+2024-08-22T21:13:23.585+03:00  INFO 11660 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-08-22T21:13:23.586+03:00  INFO 11660 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-08-22T21:13:23.587+03:00  INFO 11660 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2024-08-22T21:13:23.605+03:00  INFO 11660 --- [main] d.b.s.i.controller.UserControllerIT      : Started UserControllerIT in 4.903 seconds (process running for 7.865)
+2024-08-22T21:13:23.937+03:00  INFO 11660 --- [SpringApplicationShutdownHook] d.b.scbtspring.database.ConnectionPool   : clean connection pool
+2024-08-22T21:13:23.937+03:00  INFO 11660 --- [SpringApplicationShutdownHook] d.b.scbtspring.database.ConnectionPool   : clean connection pool
+2024-08-22T21:13:23.938+03:00  INFO 11660 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-22T21:13:23.939+03:00  INFO 11660 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-08-22T21:13:23.945+03:00  INFO 11660 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-08-22T21:13:58.718+03:00  INFO 9524 --- [main] d.b.s.i.controller.UserControllerIT      : Starting UserControllerIT using Java 17.0.6 with PID 9524 (started by Rustam in C:\Users\Rustam\IdeaProjects\ScbtSpring)
+2024-08-22T21:13:58.719+03:00  INFO 9524 --- [main] d.b.s.i.controller.UserControllerIT      : The following 1 profile is active: "test"
+2024-08-22T21:13:59.088+03:00  INFO 9524 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-22T21:13:59.133+03:00  INFO 9524 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 40 ms. Found 2 JPA repository interfaces.
+2024-08-22T21:14:00.334+03:00  INFO 9524 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-22T21:14:00.488+03:00  INFO 9524 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5ddf5118
+2024-08-22T21:14:00.490+03:00  INFO 9524 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-22T21:14:00.641+03:00  INFO 9524 --- [main] liquibase.database                       : Set default schema name to public
+2024-08-22T21:14:00.805+03:00  INFO 9524 --- [main] liquibase.changelog                      : Creating database history table with name: public.databasechangelog
+2024-08-22T21:14:00.837+03:00  INFO 9524 --- [main] liquibase.changelog                      : Reading from public.databasechangelog
+2024-08-22T21:14:00.910+03:00  INFO 9524 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
+2024-08-22T21:14:00.911+03:00  INFO 9524 --- [main] liquibase.command                        : Using deploymentId: 4350440911
+2024-08-22T21:14:00.914+03:00  INFO 9524 --- [main] liquibase.changelog                      : Reading from public.databasechangelog
+2024-08-22T21:14:00.939+03:00  INFO 9524 --- [main] liquibase.ui                             : Running Changeset: liquibase/changesets/V1_init_all-tables.sql::1::rustam
+2024-08-22T21:14:00.955+03:00  INFO 9524 --- [main] liquibase.changelog                      : Custom SQL executed
+2024-08-22T21:14:00.958+03:00  INFO 9524 --- [main] liquibase.changelog                      : ChangeSet liquibase/changesets/V1_init_all-tables.sql::1::rustam ran successfully in 17ms
+2024-08-22T21:14:00.964+03:00  INFO 9524 --- [main] liquibase.ui                             : Running Changeset: liquibase/changesets/V1_init_all-tables.sql::2::rustam
+2024-08-22T21:14:00.969+03:00  INFO 9524 --- [main] liquibase.changelog                      : Custom SQL executed
+2024-08-22T21:14:00.970+03:00  INFO 9524 --- [main] liquibase.changelog                      : ChangeSet liquibase/changesets/V1_init_all-tables.sql::2::rustam ran successfully in 5ms
+2024-08-22T21:14:00.974+03:00  INFO 9524 --- [main] liquibase.ui                             : Running Changeset: liquibase/changesets/V1_init_all-tables.sql::3::rustam
+2024-08-22T21:14:00.978+03:00  INFO 9524 --- [main] liquibase.changelog                      : Custom SQL executed
+2024-08-22T21:14:00.979+03:00  INFO 9524 --- [main] liquibase.changelog                      : ChangeSet liquibase/changesets/V1_init_all-tables.sql::3::rustam ran successfully in 5ms
+2024-08-22T21:14:00.983+03:00  INFO 9524 --- [main] liquibase.ui                             : Running Changeset: liquibase/changesets/V1_init_all-tables.sql::4::rustam
+2024-08-22T21:14:00.987+03:00  INFO 9524 --- [main] liquibase.changelog                      : Custom SQL executed
+2024-08-22T21:14:00.988+03:00  INFO 9524 --- [main] liquibase.changelog                      : ChangeSet liquibase/changesets/V1_init_all-tables.sql::4::rustam ran successfully in 5ms
+2024-08-22T21:14:00.991+03:00  INFO 9524 --- [main] liquibase.ui                             : Running Changeset: liquibase/changesets/V1_init_all-tables.sql::5::rustam
+2024-08-22T21:14:00.994+03:00  INFO 9524 --- [main] liquibase.changelog                      : Custom SQL executed
+2024-08-22T21:14:00.996+03:00  INFO 9524 --- [main] liquibase.changelog                      : ChangeSet liquibase/changesets/V1_init_all-tables.sql::5::rustam ran successfully in 4ms
+2024-08-22T21:14:00.999+03:00  INFO 9524 --- [main] liquibase.ui                             : Running Changeset: liquibase/changesets/V1_init_all-tables.sql::6::rustam
+2024-08-22T21:14:01.003+03:00  INFO 9524 --- [main] liquibase.changelog                      : Custom SQL executed
+2024-08-22T21:14:01.004+03:00  INFO 9524 --- [main] liquibase.changelog                      : ChangeSet liquibase/changesets/V1_init_all-tables.sql::6::rustam ran successfully in 5ms
+2024-08-22T21:14:01.007+03:00  INFO 9524 --- [main] liquibase.ui                             : Running Changeset: liquibase/changesets/V1_audit_all-tables.sql::1::rustam
+2024-08-22T21:14:01.010+03:00  INFO 9524 --- [main] liquibase.changelog                      : Custom SQL executed
+2024-08-22T21:14:01.011+03:00  INFO 9524 --- [main] liquibase.changelog                      : ChangeSet liquibase/changesets/V1_audit_all-tables.sql::1::rustam ran successfully in 3ms
+2024-08-22T21:14:01.014+03:00  INFO 9524 --- [main] liquibase.ui                             : Running Changeset: liquibase/changesets/V1_audit_all-tables.sql::2::rustam
+2024-08-22T21:14:01.017+03:00  INFO 9524 --- [main] liquibase.changelog                      : Custom SQL executed
+2024-08-22T21:14:01.018+03:00  INFO 9524 --- [main] liquibase.changelog                      : ChangeSet liquibase/changesets/V1_audit_all-tables.sql::2::rustam ran successfully in 4ms
+2024-08-22T21:14:01.021+03:00  INFO 9524 --- [main] liquibase.ui                             : Running Changeset: liquibase/changesets/V1_audit_all-tables.sql::3::rustam
+2024-08-22T21:14:01.024+03:00  INFO 9524 --- [main] liquibase.changelog                      : Custom SQL executed
+2024-08-22T21:14:01.025+03:00  INFO 9524 --- [main] liquibase.changelog                      : ChangeSet liquibase/changesets/V1_audit_all-tables.sql::3::rustam ran successfully in 4ms
+2024-08-22T21:14:01.027+03:00  INFO 9524 --- [main] liquibase.ui                             : Running Changeset: liquibase/changesets/V1_audit_all-tables.sql::4::rustam
+2024-08-22T21:14:01.030+03:00  INFO 9524 --- [main] liquibase.changelog                      : Custom SQL executed
+2024-08-22T21:14:01.031+03:00  INFO 9524 --- [main] liquibase.changelog                      : ChangeSet liquibase/changesets/V1_audit_all-tables.sql::4::rustam ran successfully in 3ms
+2024-08-22T21:14:01.038+03:00  INFO 9524 --- [main] liquibase.util                           : UPDATE SUMMARY
+2024-08-22T21:14:01.038+03:00  INFO 9524 --- [main] liquibase.util                           : Run:                         10
+2024-08-22T21:14:01.038+03:00  INFO 9524 --- [main] liquibase.util                           : Previously run:               0
+2024-08-22T21:14:01.038+03:00  INFO 9524 --- [main] liquibase.util                           : Filtered out:                 0
+2024-08-22T21:14:01.038+03:00  INFO 9524 --- [main] liquibase.util                           : -------------------------------
+2024-08-22T21:14:01.038+03:00  INFO 9524 --- [main] liquibase.util                           : Total change sets:           10
+2024-08-22T21:14:01.038+03:00  INFO 9524 --- [main] liquibase.util                           : Update summary generated
+2024-08-22T21:14:01.040+03:00  INFO 9524 --- [main] liquibase.command                        : Update command completed successfully.
+2024-08-22T21:14:01.040+03:00  INFO 9524 --- [main] liquibase.ui                             : Liquibase: Update has been successful. Rows affected: 10
+2024-08-22T21:14:01.044+03:00  INFO 9524 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2024-08-22T21:14:01.045+03:00  INFO 9524 --- [main] liquibase.command                        : Command execution complete
+2024-08-22T21:14:01.132+03:00  INFO 9524 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-22T21:14:01.202+03:00  INFO 9524 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-08-22T21:14:01.248+03:00  INFO 9524 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-22T21:14:01.362+03:00  INFO 9524 --- [main] o.h.e.boot.internal.EnversServiceImpl    : Envers integration enabled? : true
+2024-08-22T21:14:01.406+03:00  INFO 9524 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-22T21:14:01.766+03:00  INFO 9524 --- [main] o.h.e.c.i.m.AuditMetadataGenerator       : Adding properties for entity: dance.brain.scbtspring.entity.User
+2024-08-22T21:14:02.397+03:00  INFO 9524 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-22T21:14:02.706+03:00  INFO 9524 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-22T21:14:02.714+03:00  INFO 9524 --- [main] d.b.scbtspring.config.JpaConfiguration   : Jpa configuration was enabled.
+2024-08-22T21:14:03.063+03:00  INFO 9524 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-08-22T21:14:03.313+03:00  INFO 9524 --- [main] d.b.scbtspring.database.ConnectionPool   : init connection pool with pool size : 12
+2024-08-22T21:14:03.314+03:00  INFO 9524 --- [main] d.b.scbtspring.database.ConnectionPool   : init connection pool with pool size : 100
+2024-08-22T21:14:03.767+03:00  INFO 9524 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-08-22T21:14:03.767+03:00  INFO 9524 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-08-22T21:14:03.769+03:00  INFO 9524 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2024-08-22T21:14:03.790+03:00  INFO 9524 --- [main] d.b.s.i.controller.UserControllerIT      : Started UserControllerIT in 5.296 seconds (process running for 8.381)
+2024-08-22T21:14:04.123+03:00  INFO 9524 --- [SpringApplicationShutdownHook] d.b.scbtspring.database.ConnectionPool   : clean connection pool
+2024-08-22T21:14:04.124+03:00  INFO 9524 --- [SpringApplicationShutdownHook] d.b.scbtspring.database.ConnectionPool   : clean connection pool
+2024-08-22T21:14:04.124+03:00  INFO 9524 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-22T21:14:04.126+03:00  INFO 9524 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-08-22T21:14:04.134+03:00  INFO 9524 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-08-22T21:14:50.846+03:00  INFO 4676 --- [main] d.b.s.i.controller.UserControllerIT      : Starting UserControllerIT using Java 17.0.6 with PID 4676 (started by Rustam in C:\Users\Rustam\IdeaProjects\ScbtSpring)
+2024-08-22T21:14:50.847+03:00  INFO 4676 --- [main] d.b.s.i.controller.UserControllerIT      : The following 1 profile is active: "test"
+2024-08-22T21:14:51.300+03:00  INFO 4676 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-22T21:14:51.345+03:00  INFO 4676 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 40 ms. Found 2 JPA repository interfaces.
+2024-08-22T21:14:52.522+03:00  INFO 4676 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-22T21:14:52.683+03:00  INFO 4676 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7ae0a26
+2024-08-22T21:14:52.685+03:00  INFO 4676 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-22T21:14:52.835+03:00  INFO 4676 --- [main] liquibase.database                       : Set default schema name to public
+2024-08-22T21:14:53.090+03:00  INFO 4676 --- [main] liquibase.changelog                      : Creating database history table with name: public.databasechangelog
+2024-08-22T21:14:53.134+03:00  INFO 4676 --- [main] liquibase.changelog                      : Reading from public.databasechangelog
+2024-08-22T21:14:53.195+03:00  INFO 4676 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
+2024-08-22T21:14:53.197+03:00  INFO 4676 --- [main] liquibase.command                        : Using deploymentId: 4350493197
+2024-08-22T21:14:53.199+03:00  INFO 4676 --- [main] liquibase.changelog                      : Reading from public.databasechangelog
+2024-08-22T21:14:53.222+03:00  INFO 4676 --- [main] liquibase.ui                             : Running Changeset: liquibase/changesets/V1_init_all-tables.sql::1::rustam
+2024-08-22T21:14:53.237+03:00  INFO 4676 --- [main] liquibase.changelog                      : Custom SQL executed
+2024-08-22T21:14:53.239+03:00  INFO 4676 --- [main] liquibase.changelog                      : ChangeSet liquibase/changesets/V1_init_all-tables.sql::1::rustam ran successfully in 16ms
+2024-08-22T21:14:53.246+03:00  INFO 4676 --- [main] liquibase.ui                             : Running Changeset: liquibase/changesets/V1_init_all-tables.sql::2::rustam
+2024-08-22T21:14:53.251+03:00  INFO 4676 --- [main] liquibase.changelog                      : Custom SQL executed
+2024-08-22T21:14:53.252+03:00  INFO 4676 --- [main] liquibase.changelog                      : ChangeSet liquibase/changesets/V1_init_all-tables.sql::2::rustam ran successfully in 5ms
+2024-08-22T21:14:53.255+03:00  INFO 4676 --- [main] liquibase.ui                             : Running Changeset: liquibase/changesets/V1_init_all-tables.sql::3::rustam
+2024-08-22T21:14:53.260+03:00  INFO 4676 --- [main] liquibase.changelog                      : Custom SQL executed
+2024-08-22T21:14:53.262+03:00  INFO 4676 --- [main] liquibase.changelog                      : ChangeSet liquibase/changesets/V1_init_all-tables.sql::3::rustam ran successfully in 6ms
+2024-08-22T21:14:53.266+03:00  INFO 4676 --- [main] liquibase.ui                             : Running Changeset: liquibase/changesets/V1_init_all-tables.sql::4::rustam
+2024-08-22T21:14:53.270+03:00  INFO 4676 --- [main] liquibase.changelog                      : Custom SQL executed
+2024-08-22T21:14:53.272+03:00  INFO 4676 --- [main] liquibase.changelog                      : ChangeSet liquibase/changesets/V1_init_all-tables.sql::4::rustam ran successfully in 6ms
+2024-08-22T21:14:53.276+03:00  INFO 4676 --- [main] liquibase.ui                             : Running Changeset: liquibase/changesets/V1_init_all-tables.sql::5::rustam
+2024-08-22T21:14:53.282+03:00  INFO 4676 --- [main] liquibase.changelog                      : Custom SQL executed
+2024-08-22T21:14:53.283+03:00  INFO 4676 --- [main] liquibase.changelog                      : ChangeSet liquibase/changesets/V1_init_all-tables.sql::5::rustam ran successfully in 7ms
+2024-08-22T21:14:53.287+03:00  INFO 4676 --- [main] liquibase.ui                             : Running Changeset: liquibase/changesets/V1_init_all-tables.sql::6::rustam
+2024-08-22T21:14:53.294+03:00  INFO 4676 --- [main] liquibase.changelog                      : Custom SQL executed
+2024-08-22T21:14:53.296+03:00  INFO 4676 --- [main] liquibase.changelog                      : ChangeSet liquibase/changesets/V1_init_all-tables.sql::6::rustam ran successfully in 7ms
+2024-08-22T21:14:53.300+03:00  INFO 4676 --- [main] liquibase.ui                             : Running Changeset: liquibase/changesets/V1_audit_all-tables.sql::1::rustam
+2024-08-22T21:14:53.304+03:00  INFO 4676 --- [main] liquibase.changelog                      : Custom SQL executed
+2024-08-22T21:14:53.306+03:00  INFO 4676 --- [main] liquibase.changelog                      : ChangeSet liquibase/changesets/V1_audit_all-tables.sql::1::rustam ran successfully in 5ms
+2024-08-22T21:14:53.310+03:00  INFO 4676 --- [main] liquibase.ui                             : Running Changeset: liquibase/changesets/V1_audit_all-tables.sql::2::rustam
+2024-08-22T21:14:53.314+03:00  INFO 4676 --- [main] liquibase.changelog                      : Custom SQL executed
+2024-08-22T21:14:53.315+03:00  INFO 4676 --- [main] liquibase.changelog                      : ChangeSet liquibase/changesets/V1_audit_all-tables.sql::2::rustam ran successfully in 4ms
+2024-08-22T21:14:53.318+03:00  INFO 4676 --- [main] liquibase.ui                             : Running Changeset: liquibase/changesets/V1_audit_all-tables.sql::3::rustam
+2024-08-22T21:14:53.321+03:00  INFO 4676 --- [main] liquibase.changelog                      : Custom SQL executed
+2024-08-22T21:14:53.322+03:00  INFO 4676 --- [main] liquibase.changelog                      : ChangeSet liquibase/changesets/V1_audit_all-tables.sql::3::rustam ran successfully in 4ms
+2024-08-22T21:14:53.326+03:00  INFO 4676 --- [main] liquibase.ui                             : Running Changeset: liquibase/changesets/V1_audit_all-tables.sql::4::rustam
+2024-08-22T21:14:53.329+03:00  INFO 4676 --- [main] liquibase.changelog                      : Custom SQL executed
+2024-08-22T21:14:53.330+03:00  INFO 4676 --- [main] liquibase.changelog                      : ChangeSet liquibase/changesets/V1_audit_all-tables.sql::4::rustam ran successfully in 4ms
+2024-08-22T21:14:53.339+03:00  INFO 4676 --- [main] liquibase.util                           : UPDATE SUMMARY
+2024-08-22T21:14:53.339+03:00  INFO 4676 --- [main] liquibase.util                           : Run:                         10
+2024-08-22T21:14:53.339+03:00  INFO 4676 --- [main] liquibase.util                           : Previously run:               0
+2024-08-22T21:14:53.340+03:00  INFO 4676 --- [main] liquibase.util                           : Filtered out:                 0
+2024-08-22T21:14:53.340+03:00  INFO 4676 --- [main] liquibase.util                           : -------------------------------
+2024-08-22T21:14:53.340+03:00  INFO 4676 --- [main] liquibase.util                           : Total change sets:           10
+2024-08-22T21:14:53.340+03:00  INFO 4676 --- [main] liquibase.util                           : Update summary generated
+2024-08-22T21:14:53.342+03:00  INFO 4676 --- [main] liquibase.command                        : Update command completed successfully.
+2024-08-22T21:14:53.342+03:00  INFO 4676 --- [main] liquibase.ui                             : Liquibase: Update has been successful. Rows affected: 10
+2024-08-22T21:14:53.347+03:00  INFO 4676 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2024-08-22T21:14:53.349+03:00  INFO 4676 --- [main] liquibase.command                        : Command execution complete
+2024-08-22T21:14:53.454+03:00  INFO 4676 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-22T21:14:53.528+03:00  INFO 4676 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-08-22T21:14:53.578+03:00  INFO 4676 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-22T21:14:53.681+03:00  INFO 4676 --- [main] o.h.e.boot.internal.EnversServiceImpl    : Envers integration enabled? : true
+2024-08-22T21:14:53.716+03:00  INFO 4676 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-22T21:14:54.155+03:00  INFO 4676 --- [main] o.h.e.c.i.m.AuditMetadataGenerator       : Adding properties for entity: dance.brain.scbtspring.entity.User
+2024-08-22T21:14:54.711+03:00  INFO 4676 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-22T21:14:54.965+03:00  INFO 4676 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-22T21:14:54.971+03:00  INFO 4676 --- [main] d.b.scbtspring.config.JpaConfiguration   : Jpa configuration was enabled.
+2024-08-22T21:14:55.266+03:00  INFO 4676 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-08-22T21:14:55.527+03:00  INFO 4676 --- [main] d.b.scbtspring.database.ConnectionPool   : init connection pool with pool size : 12
+2024-08-22T21:14:55.527+03:00  INFO 4676 --- [main] d.b.scbtspring.database.ConnectionPool   : init connection pool with pool size : 100
+2024-08-22T21:14:55.995+03:00  INFO 4676 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-08-22T21:14:55.996+03:00  INFO 4676 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-08-22T21:14:55.997+03:00  INFO 4676 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2024-08-22T21:14:56.018+03:00  INFO 4676 --- [main] d.b.s.i.controller.UserControllerIT      : Started UserControllerIT in 5.382 seconds (process running for 8.229)
+2024-08-22T21:14:56.359+03:00  INFO 4676 --- [SpringApplicationShutdownHook] d.b.scbtspring.database.ConnectionPool   : clean connection pool
+2024-08-22T21:14:56.360+03:00  INFO 4676 --- [SpringApplicationShutdownHook] d.b.scbtspring.database.ConnectionPool   : clean connection pool
+2024-08-22T21:14:56.361+03:00  INFO 4676 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-22T21:14:56.364+03:00  INFO 4676 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-08-22T21:14:56.374+03:00  INFO 4676 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

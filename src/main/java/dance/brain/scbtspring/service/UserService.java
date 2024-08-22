@@ -11,9 +11,9 @@ public interface UserService {
 
     User getById(Long id);
 
-    User create(User user);
+    User create(Long companyId, User user);
 
-    User update(Long id, User user);
+    User update(Long companyId, Long id, User user);
 
     void delete(Long id);
 }

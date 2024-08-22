@@ -13,32 +13,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
-@Service
-@Transactional
-public class CompanyService {
 
-    private final CompanyRepository companyRepository;
+public interface CompanyService {
 
-    private final UserService userService;
-    private final EntityPublisher entityPublisher;
-
-    @Autowired
-    public CompanyService(CompanyRepository companyRepository, UserService userService, EntityPublisher entityPublisher) {
-        this.companyRepository = companyRepository;
-        this.userService = userService;
-        this.entityPublisher = entityPublisher;
-    }
-
-
-    public Optional<CompanyReadDto> findById(Long id) {
-        return companyRepository.findById(id)
-                .map(entity -> {
-                    entityPublisher.getApplicationEventPublisher().publishEvent(new EntityEvent(entity, AccessType.SELECT));
-                    return new CompanyReadDto(entity.getId(), null);
-                });
-    }
-
-    public CompanyRepository getCompanyRepository() {
-        return this.companyRepository;
-    }
+    Company getById(Long id);
 }
