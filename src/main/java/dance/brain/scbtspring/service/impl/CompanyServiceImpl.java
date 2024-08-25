@@ -12,6 +12,8 @@ import dance.brain.scbtspring.service.UserService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @Transactional
 public class CompanyServiceImpl implements CompanyService {
@@ -30,5 +32,10 @@ public class CompanyServiceImpl implements CompanyService {
                 .orElseThrow(() -> new EntityNotFoundException("Company not found."));
         entityPublisher.getApplicationEventPublisher().publishEvent(new EntityEvent(maybeCompany, AccessType.SELECT));
         return maybeCompany;
+    }
+
+    @Override
+    public List<Company> getAll() {
+        return companyRepository.findAll();
     }
 }

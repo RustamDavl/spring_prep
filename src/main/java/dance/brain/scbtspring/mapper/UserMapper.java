@@ -15,7 +15,9 @@ public interface UserMapper {
 
     User toEntity(CreateUpdateUserDto dto);
 
+    @Mapping(source = "company", target = "companyReadDto")
     List<UserReadDto> toDtoList(List<User> users);
 
+    @Mapping(source = "company", target = "companyReadDto")
     UserReadDto toDto(User user);
 }

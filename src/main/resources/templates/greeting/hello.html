@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Hello</title>
 </head>
 <body>
-Hello, ${requestScope.modelAttribute.username}!
+<p th:text="|Hello, ${user.username}!|">pattern</p>
 </body>
 </html>

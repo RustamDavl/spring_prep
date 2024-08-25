@@ -2,9 +2,11 @@ package dance.brain.scbtspring.database.querydsl;
 
 import com.querydsl.core.types.ExpressionUtils;
 import com.querydsl.core.types.Predicate;
+import com.querydsl.core.types.dsl.Expressions;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.Function;
 
 public class QPredicate {
@@ -26,6 +28,7 @@ public class QPredicate {
     }
 
     public Predicate build() {
-        return ExpressionUtils.allOf(predicates);
+        return Optional.ofNullable(ExpressionUtils.allOf(predicates))
+                .orElseGet(() -> Expressions.asBoolean(true).isTrue());
     }
 }

@@ -34,9 +34,8 @@ logging:
     path: /
 spring:
   mvc:
-    view:
-      suffix: .jsp
-      prefix: /WEB-INF/jsp/
+    format:
+      date: iso
   liquibase:
     change-log: classpath:liquibase/master/changelog-master.yaml
   datasource:

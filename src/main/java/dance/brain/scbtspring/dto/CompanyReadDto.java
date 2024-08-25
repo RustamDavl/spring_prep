@@ -1,4 +1,10 @@
 package dance.brain.scbtspring.dto;
 
-public record CompanyReadDto(Long id, String name) {
+import lombok.Value;
+
+@Value
+public class CompanyReadDto {
+    Long id;
+    String name;
 }
+

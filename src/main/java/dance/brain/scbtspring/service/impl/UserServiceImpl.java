@@ -1,5 +1,8 @@
 package dance.brain.scbtspring.service.impl;
 
+import com.querydsl.core.types.Predicate;
+import dance.brain.scbtspring.database.querydsl.QPredicate;
+import dance.brain.scbtspring.dto.UserFilter;
 import dance.brain.scbtspring.entity.Company;
 import dance.brain.scbtspring.entity.User;
 import dance.brain.scbtspring.exception.EntityNotFoundException;
@@ -7,10 +10,14 @@ import dance.brain.scbtspring.repository.UserRepository;
 import dance.brain.scbtspring.service.CompanyService;
 import dance.brain.scbtspring.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+
+import static dance.brain.scbtspring.entity.QUser.user;
 
 @Service
 @Transactional(readOnly = true)
@@ -28,6 +35,21 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<User> getAll() {
         return userRepository.findAll();
+    }
+
+    @Override
+    public List<User> getAll(UserFilter userFilter) {
+        return userRepository.findAllByUserFilter(userFilter);
+    }
+
+    @Override
+    public Page<User> getAll(UserFilter userFilter, Pageable pageable) {
+        Predicate predicate = QPredicate.builder()
+                .add(userFilter.firstname(), user.firstname::containsIgnoreCase)
+                .add(userFilter.lastname(), user.lastname::containsIgnoreCase)
+                .add(userFilter.birthDate(), user.birthDate::before)
+                .build();
+        return userRepository.findAll(predicate, pageable);
     }
 
     @Override
