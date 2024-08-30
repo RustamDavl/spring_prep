@@ -3,3 +3,7 @@ databaseChangeLog:
       file: liquibase/changesets/V1_init_all-tables.sql
   - include:
       file: liquibase/changesets/V1_audit_all-tables.sql
+  - include:
+      file: liquibase/changesets/V2_add_image_column.sql
+  - include:
+      file: liquibase/changesets/V3_add_password.sql

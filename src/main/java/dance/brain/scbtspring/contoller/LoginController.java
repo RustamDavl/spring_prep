@@ -15,10 +15,10 @@ public class LoginController {
         return "user/login";
     }
 
-    @PostMapping
-    public String login(Model model, UserLoginDto userLoginDto) {
-        model.addAttribute("loggedInUser", userLoginDto);
-        // TODO: 20.08.2024 save userLoginDto object.
-        return "redirect:/api/v1/home";
-    }
+//    @PostMapping
+//    public String login(Model model, UserLoginDto userLoginDto) {
+//        model.addAttribute("loggedInUser", userLoginDto);
+//        // TODO: 20.08.2024 save userLoginDto object.
+//        return "redirect:/api/v1/home";
+//    }
 }

@@ -9,6 +9,10 @@ import dance.brain.scbtspring.mapper.CompanyMapper;
 import dance.brain.scbtspring.mapper.UserMapper;
 import dance.brain.scbtspring.service.CompanyService;
 import dance.brain.scbtspring.service.UserService;
+import dance.brain.scbtspring.validation.groups.OnCreate;
+import dance.brain.scbtspring.validation.groups.OnUpdate;
+import jakarta.validation.groups.Default;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -22,6 +26,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 @RequestMapping("/api/v1/users")
+@Slf4j
 public class UserController {
 
     private final UserService userService;
@@ -63,7 +68,7 @@ public class UserController {
     }
 
     @PostMapping
-    public String createUser(@ModelAttribute @Validated CreateUpdateUserDto dto,
+    public String createUser(@ModelAttribute @Validated({Default.class, OnCreate.class}) CreateUpdateUserDto dto,
                              BindingResult bindingResult,
                              RedirectAttributes redirectAttributes) {
         if (bindingResult.hasErrors()) {
@@ -80,7 +85,7 @@ public class UserController {
     // TODO: 20.08.2024 in rest app post will be replaced by put
     @PostMapping("/{id}/update")
     public String updateUser(@PathVariable("id") Long id,
-                             @Validated
+                             @Validated({Default.class, OnUpdate.class})
                              @ModelAttribute CreateUpdateUserDto dto) {
         User newUser = userMapper.toEntity(dto);
         User updatedUser = userService.update(dto.getCompanyId(), id, newUser);

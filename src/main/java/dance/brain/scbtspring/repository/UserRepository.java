@@ -29,6 +29,8 @@ public interface UserRepository extends
         RevisionRepository<User, Long, Long>,
         QuerydslPredicateExecutor<User> {
 
+    Optional<User> findByUsername(String username);
+
     @Query("""
             select u from User u
             where u.firstname like %:firstName% and u.lastname like %:lastName%

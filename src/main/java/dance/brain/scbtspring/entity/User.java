@@ -1,5 +1,6 @@
 package dance.brain.scbtspring.entity;
 
+import dance.brain.scbtspring.dto.UserReadDto;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.envers.Audited;
@@ -35,6 +36,8 @@ public class User extends AuditingEntity {
 
     @Enumerated(EnumType.STRING)
     private Role role;
+
+    private String password;
 
     @ManyToOne
     @JoinColumn(name = "company_id")

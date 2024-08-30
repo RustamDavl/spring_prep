@@ -53,3 +53,6 @@ spring:
         jdbc:
           batch_size: 50
     open-in-view: false
+app:
+  images:
+    bucket: user

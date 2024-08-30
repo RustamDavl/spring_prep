@@ -12,10 +12,13 @@ import dance.brain.scbtspring.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 import static dance.brain.scbtspring.entity.QUser.user;
 
@@ -95,5 +98,16 @@ public class UserServiceImpl implements UserService {
         fromDb.setLastname(newUser.getLastname());
         fromDb.setBirthDate(newUser.getBirthDate());
         fromDb.setRole(newUser.getRole());
+    }
+
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        User maybeUser = userRepository.findByUsername(username)
+                .orElseThrow(() -> new UsernameNotFoundException("User not found"));
+        return new org.springframework.security.core.userdetails.User(
+                maybeUser.getUsername(),
+                maybeUser.getPassword(),
+                List.of(maybeUser.getRole())
+        );
     }
 }
