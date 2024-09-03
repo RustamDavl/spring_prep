@@ -17,6 +17,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.security.access.prepost.PostAuthorize;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.annotation.CurrentSecurityContext;
+import org.springframework.security.core.context.SecurityContext;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -60,6 +66,8 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
+//    @PostAuthorize("returnObject")
     public String getUserById(@PathVariable("id") Long id, Model model) {
         model.addAttribute("user", userMapper.toDto(userService.getById(id)));
         model.addAttribute("roles", Role.values());
@@ -77,8 +85,8 @@ public class UserController {
             return "redirect:/api/v1/users/registration";
         }
         User newUser = userMapper.toEntity(dto);
-        User createdUser = userService.create(dto.getCompanyId(), newUser);
-        return "redirect:/api/v1/users/" + createdUser.getId();
+        userService.create(dto.getCompanyId(), newUser);
+        return "redirect:/api/v1/login";
     }
 
     //    @PutMapping("/{id}")

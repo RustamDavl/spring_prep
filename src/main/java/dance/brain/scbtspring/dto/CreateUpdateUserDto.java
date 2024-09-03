@@ -13,11 +13,14 @@ import org.springframework.format.annotation.DateTimeFormat;
 import java.time.LocalDate;
 
 @Value
-@UserInfo(groups = OnCreate.class)
+@UserInfo(groups = OnUpdate.class)
 public class CreateUpdateUserDto {
 
     @Email
     String username;
+
+    @NotBlank(groups = OnCreate.class)
+    String rawPassword;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     LocalDate birthDate;

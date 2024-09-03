@@ -27,6 +27,8 @@ public class User extends AuditingEntity {
 
     private String username;
 
+    private String password;
+
     @Column(name = "birth_date")
     private LocalDate birthDate;
 
@@ -36,8 +38,6 @@ public class User extends AuditingEntity {
 
     @Enumerated(EnumType.STRING)
     private Role role;
-
-    private String password;
 
     @ManyToOne
     @JoinColumn(name = "company_id")
